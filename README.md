@@ -86,6 +86,17 @@ server{
     }
 }
 ```
+最后记得在supervisor.conf下加上nginx项目
+```bash
+  [program:nginx]
+  command=/usr/sbin/nginx
+  startsecs=0
+  stopwaitsecs=0
+  autostart=false
+  autorestart=false
+  stdout_logfile=/home/ubuntu/tdz/flask-projects-manage/log/nginx.log
+  stderr_logfile=/home/ubuntu/tdz/flask-projects-manage/log/nginx.err
+```
 ---
 好了，部署完了，进入9001端口启动即可。
 
